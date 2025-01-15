@@ -1,0 +1,776 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #000;
+  padding: 20px;
+  padding-bottom: 100px;
+}
+
+header {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.15)),
+    url("dv.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+nav {
+  width: 100%;
+  height: 15vh;
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  padding: 0 20px;
+}
+
+nav .logo {
+  width: 25%;
+  text-align: center;
+  font-size: 30px; /* Increased logo text size */
+  font-weight: bold;
+}
+
+nav .logo .logoname {
+  color: #ccc;
+  text-decoration: none;
+}
+
+nav .menu {
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav .menu a {
+  width: 25%;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+nav .logo a:hover {
+  color: black; /* Change color from white to black on hover */
+}
+
+nav .menu a:hover {
+  color: black; /* Change color from white to black on hover */
+}
+
+main {
+  width: 100%;
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+main .img img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%; /* Makes the image circular */
+  border: 3px solid #fff;
+  transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+main .img img:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+
+section h3 {
+  font-size: 28px; /* Reduced size slightly */
+  font-weight: 200;
+  letter-spacing: 3px;
+  text-shadow: 1px 1px 2px black;
+  margin-bottom: 20px; /* Added spacing after "Welcome To My World" */
+}
+
+section h1 {
+  margin: 30px 0 20px 0;
+  font-size: 55px;
+  font-weight: 700;
+  text-shadow: 2px 1px 5px rgb(0, 0, 0);
+  text-transform: uppercase;
+}
+
+section p {
+  font-size: 25px;
+  word-spacing: 2px;
+  margin-bottom: 25px;
+  color: #ccc;
+  text-shadow: 1px 1px 1px rgb(0, 0, 0);
+}
+
+section a {
+  padding: 12px 30px;
+  border-radius: 4px;
+  outline: none;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: all 0.5s ease;
+}
+
+section .btnone {
+  background: #fff;
+  color: #000;
+}
+
+.btnone:hover {
+  background: #000000;
+  color: white;
+}
+
+section .btntwo {
+  background: #000000;
+  color: white;
+}
+
+.btntwo:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  nav .logo {
+    font-size: 24px; /* Adjust logo size for smaller screens */
+  }
+
+  nav .menu {
+    width: 60%; /* Adjust menu width for smaller screens */
+  }
+
+  section h1 {
+    font-size: 40px; /* Reduce heading size for smaller screens */
+  }
+
+  section h3 {
+    font-size: 22px; /* Smaller size for welcome text on small screens */
+  }
+}
+
+/*grid*/
+
+/* Gallery Container */
+#image-gallery {
+  margin: 20px auto; /* Center the gallery with top margin */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns by default */
+  gap: 15px; /* Gap between grid items */
+  padding: 20px;
+  width: 100%; /* Use full width of the screen */
+  max-width: 100%; /* Remove any extra limits for PC screens */
+  box-sizing: border-box; /* Includes padding in total width */
+}
+
+/* Grid Item Styling */
+.grid-item {
+  position: relative;
+  width: 100%; /* Full width of the column */
+  aspect-ratio: 1 / 1; /* Ensures the grid item is a square */
+  overflow: hidden;
+  background-color: #f8f9fa; /* Light background for contrast */
+  border-radius: 10px; /* Rounded corners */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-item:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+}
+
+/* Image Styling */
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image fits within the square */
+  border-radius: 10px; /* Matches grid-item rounded corners */
+  transition: transform 0.3s ease;
+}
+
+.grid-item:hover .image-container img {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Download Button Styling */
+.download-btn {
+  position: absolute;
+  bottom: 10px; /* Position near the bottom of the grid item */
+  right: 10px;
+  width: 40px;
+  height: 40px; /* Square button */
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+  border-radius: 8px; /* Rounded corners */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.grid-item:hover .download-btn {
+  opacity: 1; /* Show button on hover */
+}
+
+.download-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Darker on hover */
+}
+
+/* Download Icon Styling */
+.download-icon {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1); /* White icon on dark button */
+}
+
+/* Responsive Design */
+
+/* Medium screens: Reduce to two columns */
+@media (max-width: 992px) {
+  #image-gallery {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
+    gap: 15px; /* Maintain spacing */
+  }
+}
+
+/* Small screens: One column layout */
+@media (max-width: 576px) {
+  #image-gallery {
+    grid-template-columns: repeat(1, 1fr); /* One column for mobiles */
+    gap: 10px; /* Smaller gap */
+  }
+
+  .download-btn {
+    width: 35px; /* Smaller button */
+    height: 35px;
+  }
+
+  .download-icon {
+    width: 18px; /* Smaller icon */
+    height: 18px;
+  }
+}
+
+/*contact us*/
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+#contact {
+  background-color: #ffffff;
+  padding: 60px 20px;
+  margin-bottom: 40px;
+}
+
+.section-header {
+  text-align: center;
+  color: #00001c; /* Dark color for consistency with footer */
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  font-weight: 700; /* Bold header */
+}
+
+.contact-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.form-horizontal {
+  flex: 1;
+  min-width: 350px;
+}
+
+.form-group {
+  margin-bottom: 15px; /* Reduced gap between input fields */
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+textarea.form-control {
+  resize: vertical;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #00001c; /* Primary red color from footer */
+  color: white;
+  padding: 12px 30px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #39393b; /* Lighter red on hover */
+}
+
+.direct-contact-container {
+  flex: 1;
+  min-width: 350px;
+}
+
+.contact-list {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+.list-item i {
+  margin-right: 10px;
+  color: #00001c; /* Red icon color to match the button */
+}
+
+.contact-text a {
+  text-decoration: none;
+  color: #00001c; /* Dark text for links */
+  font-weight: normal; /* Keep text simple */
+}
+
+section a {
+  padding: 0;
+  text-transform: lowercase;
+}
+
+.contact-text a:hover {
+  color: #000; /* Red hover link color */
+}
+
+.social-media-list {
+  display: flex;
+  justify-content: flex-start;
+  list-style-type: none;
+  padding: 0;
+}
+
+.social-media-list li {
+  margin-right: 10px; /* Reduced gap between icons */
+}
+
+.contact-icon {
+  font-size: 1.5rem;
+  color: #00001c; /* Red icon color to match the button */
+  transition: color 0.3s ease;
+}
+
+.contact-icon:hover {
+  color: #2a2a2a; /* Dark color on hover for consistency */
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #2a2a2a; /* Dark text color */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .contact-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-horizontal,
+  .direct-contact-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-header {
+    font-size: 2rem;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 12px;
+  }
+}
+
+/* about section*/
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9; /* Light background */
+  color: var(--text-color); /* Dark text for readability */
+}
+
+/* Container for About Section */
+.about-us {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  background-color: #ffffff; /* White background */
+  margin-bottom: 40px;
+}
+
+/* Main Content Flexbox */
+.about {
+  display: flex;
+  flex-direction: row;
+  max-width: 1200px; /* Maximum width for larger screens */
+  width: 100%;
+  padding: 20px;
+}
+
+/* Image Styling */
+.pic {
+  width: 300px;
+  height: 300px;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+/* Text Section Styling */
+.text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Heading and Subheading */
+h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #00001c; /* Dark color for header */
+  margin: 0;
+}
+
+h5 {
+  font-size: 1.5rem;
+  color: #00001c; /* Standard text color */
+}
+
+span {
+  color: #00001c; /* Secondary accent color for emphasis */
+}
+
+/* Paragraph Styling */
+.about p {
+  font-size: 1.2rem;
+  line-height: 1.2;
+  margin-top: 10px;
+  text-decoration: none;
+  text-shadow: none;
+}
+
+/* Button Styling */
+.hire {
+  background-color: #00001c; /* Red button background */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.hire:hover {
+  background-color: #343448; /* Lighter red on hover */
+}
+
+.hire .alt-send-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hire i {
+  margin-right: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center align */
+  }
+
+  .pic {
+    width: 80%; /* Make the image responsive */
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .text {
+    text-align: center; /* Center text */
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 2rem; /* Adjust heading size for small screens */
+  }
+
+  h5 {
+    font-size: 1.2rem; /* Adjust subheading size for small screens */
+  }
+
+  .hire {
+    padding: 12px 25px; /* Larger padding for easier tap */
+    font-size: 1.1rem; /* Adjust font size for mobile */
+  }
+}
+
+/*footer*/
+footer {
+  position: relative;
+  background: #00001c;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 100px;
+  height: 1px;
+  width: 100%;
+  background: #afafb6;
+}
+
+footer .content {
+  max-width: 1250px;
+  margin: auto;
+  padding: 30px 40px 40px 40px;
+}
+
+footer .content .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.content .top .logo-details {
+  color: #fff;
+  font-size: 30px;
+}
+
+footer .content .top .logo-details .logo_name {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.content .top .media-icons {
+  display: flex;
+}
+
+.content .top .media-icons a {
+  height: 40px;
+  width: 40px;
+  margin: 0 8px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  color: #fff;
+  font-size: 17px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+
+/* Social Media Icons */
+.top .media-icons a:nth-child(1) {
+  background: #4267b2;
+}
+
+.top .media-icons a:nth-child(1):hover {
+  color: #4267b2;
+  background: #fff;
+}
+
+.top .media-icons a:nth-child(2) {
+  background: #060606;
+}
+
+.top .media-icons a:nth-child(2):hover {
+  color: #000000;
+  background: hsl(0, 0%, 100%);
+}
+
+.top .media-icons a:nth-child(3) {
+  background: #e1306c;
+}
+
+.top .media-icons a:nth-child(3):hover {
+  color: #e1306c;
+  background: #fff;
+}
+
+.top .media-icons a:nth-child(4) {
+  background: #0077b5;
+}
+
+.top .media-icons a:nth-child(4):hover {
+  color: #0077b5;
+  background: #fff;
+}
+
+.top .media-icons a:nth-child(5) {
+  background: #ff0000;
+}
+
+.top .media-icons a:nth-child(5):hover {
+  color: #ff0000;
+  background: #fff;
+}
+
+footer .content .link-boxes {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer .content .link-boxes .box {
+  width: calc(100% / 5 - 10px);
+}
+
+.content .link-boxes .box .link_name {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.link-boxes .box .link_name::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 35px;
+  background: #fff;
+}
+
+.content .link-boxes .box li {
+  margin: 6px 0;
+  list-style: none;
+}
+
+.content .link-boxes .box li a {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: all 0.4s ease;
+}
+
+.content .link-boxes .box li a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.content .link-boxes .input-box {
+  margin-right: 55px;
+}
+
+.link-boxes .input-box input {
+  height: 40px;
+  width: calc(100% + 55px);
+  padding-left: 20px;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+}
+
+.link-boxes .input-box input::placeholder {
+  color: #fff;
+}
+
+.link-boxes .input-box .btn {
+  height: 40px;
+  padding: 0 20px;
+  background: #ff0000;
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.link-boxes .input-box .btn:hover {
+  background: #ff0;
+}
+
+footer .content .bottom {
+  position: relative;
+  margin-top: 30px;
+}
+
+.footer .content .bottom span {
+  color: #fff;
+  font-size: 14px;
+}
+
+footer .bottom-details .bottom_text .copyright_text {
+  color: #ccc;
+  text-decoration: none;
+}
+
+footer .bottom-details .bottom_text .copyright_text a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+footer .bottom-details .bottom_text .policy_terms a {
+  color: #ccc;
+  text-decoration: none;
+}

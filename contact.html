@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Include FontAwesome for icons -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css""
+    rel="stylesheet" />
+  </head>
+  <body>
+    <section id="contact">
+      <h1 class="section-header" style="text-shadow: none">Get in Touch</h1>
+
+      <div class="contact-wrapper">
+        <!-- Contact Form -->
+        <form id="contact-form" class="form-horizontal" role="form">
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="Your Name"
+              name="name"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="Your Email"
+              name="email"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <textarea
+              class="form-control"
+              rows="5"
+              placeholder="Your Message"
+              name="message"
+              required
+            ></textarea>
+          </div>
+
+          <button class="btn send-button" id="submit" type="submit">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+
+        <!-- Contact Info -->
+        <div class="direct-contact-container">
+          <ul class="contact-list">
+            <li class="list-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span class="contact-text" style="color: #00001c"
+                >Patna, Bihar</span
+              >
+            </li>
+
+            <li class="list-item">
+              <i class="fas fa-phone"></i>
+              <span class="contact-text">
+                <a href="tel: +917903797952">+91 7903797952</a>
+              </span>
+            </li>
+
+            <li class="list-item">
+              <i class="fas fa-envelope"></i>
+              <span class="contact-text">
+                <a href="mailto:dharamveerkumar774@gmail.com">
+                  dharamveerkumar774@gmail.com
+                </a>
+              </span>
+            </li>
+          </ul>
+
+          <ul class="social-media-list">
+            <li>
+              <a href="#" class="contact-icon">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="contact-icon">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="contact-icon">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="contact-icon">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
