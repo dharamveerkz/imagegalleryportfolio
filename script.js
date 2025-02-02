@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   // Function to load images dynamically
   async function loadImages() {
     try {
-      const response = await fetch("http://localhost:3000/api/images"); // API endpoint
+      const response = await fetch("/api/images"); // API endpoint
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
