@@ -12,9 +12,13 @@ document.addEventListener("DOMContentLoaded", async function () {
       const images = await response.json(); // Parse the response JSON
       gallery.innerHTML = ""; // Clear any existing content
 
+      // Determine the correct base URL for your images (depending on environment)
+      const baseUrl = window.location.origin; // This will return either 'http://localhost:3000' or your production URL
+
       // Iterate over the list of images and add them to the gallery
       images.forEach((imageFile) => {
-        const imageUrl = `/uploads/${imageFile}`; // Correct image path
+        // Construct the full URL for the image
+        const imageUrl = `${baseUrl}/uploads/${imageFile}`; // Correct image path based on environment
 
         // Create a grid item for the gallery
         const imageElement = document.createElement("div");
