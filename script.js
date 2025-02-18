@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
       // Iterate over the list of images and add them to the gallery
       images.forEach((imageFile) => {
-        const imageUrl = `http://localhost:3000/uploads/${imageFile}`; // Image path
+        const imageUrl = `/uploads/${imageFile}`; // Correct image path
 
         // Create a grid item for the gallery
         const imageElement = document.createElement("div");
